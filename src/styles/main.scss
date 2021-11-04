@@ -1,11 +1,51 @@
 * {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 37px;
     font-style: normal;
     font-weight: 500;
-    line-height: 43px;
+    line-height: 43.85px;
     letter-spacing: 0em;
     text-align: left;
+}
+
+.workspace-icon {
+    background-image: url("../assets/icons/work-space.png");
+}
+
+html,
+body {
+    margin: 0;
+    background: $primary;
+}
+
+.logo {
+    display: flex;
+    padding: 45px 35px;
+    gap: 0.425em;
+    line-height: 45.85px;
+
+    img {
+        width: 39.42px;
+        height: 43.85px;
+    }
+}
+
+.side-bar {
+    background-color: $secondary;
+    border-radius: 0px 20px 0px 0px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 300px;
+
+    .side-bar-icon {
+        font-size: 1.5rem;
+        vertical-align: middle;
+        transform: translateY(-0.125rem);
+        line-height: 1;
+        size: 24px 24px;
+    }
 }
 
 h.dropDownMenuWrapper {

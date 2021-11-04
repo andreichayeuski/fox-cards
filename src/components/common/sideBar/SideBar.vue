@@ -1,19 +1,35 @@
 <template>
-  <div>
-    <Tabs :menuTitle="msg" />
+  <div class="side-bar">
+    <div class="logo">
+      <img alt="Vue logo" src="@/assets/logo.png" />
+      <span v-show="isOpened">WalliCards</span>
+    </div>
+    <Tabs
+      v-for="(label, index) in labels"
+      :key="index"
+      :item="label"
+    />
   </div>
 </template>
 
 <script>
-import Tabs from './Tabs.vue'
+import Tabs from "./Tabs.vue";
+
+import sideBarLabels from "@/utils/constants/sideBarLabels";
 
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
-  components: { Tabs }
-}
+  data() {
+    return {
+      labels: sideBarLabels,
+      isOpened: true
+    };
+  },
+  components: { Tabs },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
