@@ -1,9 +1,9 @@
 <template>
-  <icon-base icon-name="iconName"><Component :is="iconName" /></icon-base>
+  <base-svg icon-name="iconName"><Component :is="iconName" /></base-svg>
 </template>
 
 <script>
-import IconBase from "@/utils/components/icons/IconBase.vue";
+import BaseSvg from "@/utils/components/BaseSvg.vue";
 import AcceptDefault from "@/utils/components/icons/vue/AcceptDefault.vue";
 import AcceptUsed from "@/utils/components/icons/vue/AcceptUsed.vue";
 import AddDefault from "@/utils/components/icons/vue/AddDefault.vue";
@@ -79,7 +79,7 @@ import WorkSpaceUsed from "@/utils/components/icons/vue/WorkSpaceUsed.vue";
 
 export default {
   components: {
-    IconBase,
+    BaseSvg,
     AcceptDefault,
     AcceptUsed,
     AddDefault,
@@ -151,7 +151,7 @@ export default {
     VisibleDefault,
     VisibleUsed,
     WorkSpaceDefault,
-    WorkSpaceUsed,
+    WorkSpaceUsed
   },
   props: ["iconName"], // Menu title from the parent
   data() {
