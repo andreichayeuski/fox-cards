@@ -21,9 +21,4 @@ fs.readdir(directoryPath, function (err, files) {
             if (err) console.log('ERROR: ' + err);
         });
     });
-    //listing all files using forEach
-    /*files.forEach(function (file) {
-        // Do whatever you want to do with the file
-        console.log(file); 
-    });*/
 });
