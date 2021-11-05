@@ -1,14 +1,20 @@
 <template>
   <div class="page">
     <Header title="Интеграции" description="Активные и неактивные интеграции" />
-    <div class="page-content">
+    <div class="page-content integrations">
+      <h3>Активные интеграции ({{ activeCount }})</h3>
       <div class="active-integrations">
-        <h3>Активные интеграции ({{ activeCount }})</h3>
-        <IntegrationsBlock v-show="activeCount > 0" />
+        <IntegrationsBlock
+          v-show="activeCount > 0"
+          :servicesList="activeIntegrations"
+        />
       </div>
-      <div class="inactive-integrations">
-        <h3>Неактивные интеграции ({{ inactiveCount }})</h3>
-        <IntegrationsBlock v-show="inactiveCount > 0" />
+      <h3>Неактивные интеграции ({{ disabledCount }})</h3>
+      <div class="disabled-integrations">
+        <IntegrationsBlock
+          v-show="disabledCount > 0"
+          :servicesList="disabledIntegrations"
+        />
       </div>
     </div>
   </div>
@@ -26,9 +32,23 @@ export default {
   },
   data() {
     return {
-      activeCount: 0,
-      inactiveCount: 0,
+      activeIntegrations: [
+        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: true },
+        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: true },
+        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: true },
+      ],
+      disabledIntegrations: [
+        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: false },
+      ],
     };
+  },
+  computed: {
+    activeCount: function () {
+      return this.activeIntegrations.length;
+    },
+    disabledCount: function () {
+      return this.disabledIntegrations.length;
+    },
   },
 };
 </script>
