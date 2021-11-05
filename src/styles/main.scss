@@ -2,37 +2,8 @@ html,
 body {
     margin: 0;
     background: $primary;
-}
+    color: $secondary;
 
-.logo {
-    display: flex;
-    padding: 45px 35px;
-    gap: 0.425em;
-    line-height: 45.85px;
-    color: #eee;
-    font-family: "Roboto", sans-serif;
-    font-size: 37px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 43.85px;
-    letter-spacing: 0em;
-    text-align: left;
-
-    img {
-        width: 39.42px;
-        height: 43.85px;
-    }
-}
-
-.side-bar {
-    background-color: $secondary;
-    border-radius: 0px 20px 0px 0px;
-    position: sticky;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    max-width: 300px;
-    color: $primary;
     //styleName: p;
     font-family: "Manrope", sans-serif;
     font-style: initial;
@@ -40,35 +11,94 @@ body {
     font-size: 16px;
     line-height: 22px;
     /* identical to box height */
+}
 
-    .tab {
-        width: 250px;
-        height: 42px;
-        margin: 20px 26px;
-        padding: 10px;
-        gap: 1em;
-        display: flex;
+.main {
+    display: flex;
 
-        .side-bar-icon {
-            font-size: 1.5rem;
-            transform: translateY(-0.125rem);
-            line-height: 1;
-            vertical-align: middle;
-            display: inline-block;
+    .side-bar {
+        background-color: $secondary;
+        border-radius: 0px 20px 0px 0px;
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        max-width: 300px;
+        color: $primary;
+
+        .logo {
+            display: flex;
+            padding: 45px 35px;
+            gap: 0.425em;
+            line-height: 45.85px;
+            color: #eee;
+            font-family: "Roboto", sans-serif;
+            font-size: 37px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 43.85px;
+            letter-spacing: 0em;
+            text-align: left;
+
+            img {
+                width: 39.42px;
+                height: 43.85px;
+            }
         }
 
-        .side-bar-arrow {
-            vertical-align: middle;
+        .tab {
+            width: 250px;
+            height: 42px;
+            margin: 20px 26px;
+            padding: 10px;
+            gap: 1em;
+            display: flex;
+
+            .side-bar-icon {
+                font-size: 1.5rem;
+                transform: translateY(-0.125rem);
+                line-height: 1;
+                vertical-align: middle;
+                display: inline-block;
+            }
+
+            .side-bar-arrow {
+                vertical-align: middle;
+            }
+
+            .side-bar-text {
+                min-width: 150px;
+                vertical-align: middle;
+                display: inline-block;
+            }
+
+            span {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .page {
+        margin-left: 5%;
+
+        header {
+            margin-top: 40px;
+            top: 0;
+            display: block;
+            width: 100%;
+            flex-direction: row;
+
+            .page-title {
+                margin: 0 0 10px 0;
+                font-weight: bold;
+                font-size: 38px;
+                line-height: 52px;
+            }
         }
 
-        .side-bar-text {
-            min-width: 150px;
-            vertical-align: middle;
-            display: inline-block;
-        }
-
-        span {
-            vertical-align: middle;
+        .page-content {
+            margin-top: 40px;
+            width: 100%;
         }
     }
 }

@@ -1,14 +1,24 @@
 <template>
-  <Index msg="Welcome to Your Vue.js App"/>
+  <div class="main">
+    <SideBar :msg="message" />
+    <Integrations />
+  </div>
 </template>
 
 <script>
-import Index from './components/Index.vue'
+import SideBar from "./components/common/sideBar/SideBar.vue";
+import Integrations from "./components/pages/integrations/Integrations.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Index
-  }
-}
+    SideBar,
+    Integrations,
+  },
+  computed: {
+    message: function () {
+      return "Andrei";
+    },
+  },
+};
 </script>
