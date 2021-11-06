@@ -4,16 +4,14 @@
       <img alt="Vue logo" src="@/assets/logo.png" />
       <span v-show="isOpened">WalliCards</span>
     </div>
-    <Tabs
-      v-for="(label, index) in labels"
-      :key="index"
-      :item="label"
-    />
+    <div class="tabs">
+      <Tab v-for="(label, index) in labels" :key="index" :item="label" />
+    </div>
   </div>
 </template>
 
 <script>
-import Tabs from "./Tabs.vue";
+import Tab from "./Tab.vue";
 
 import sideBarLabels from "@/utils/constants/sideBarLabels";
 
@@ -25,10 +23,10 @@ export default {
   data() {
     return {
       labels: sideBarLabels,
-      isOpened: true
+      isOpened: true,
     };
   },
-  components: { Tabs },
+  components: { Tab },
 };
 </script>
 

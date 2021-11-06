@@ -4,8 +4,8 @@
       <span class="side-bar-icon">
         <Icons
           width="27"
-          height="22"
-          viewBox="0 0 16 18"
+          height="24"
+          viewBox="0 0 16 21"
           :icon-name="item.icon"
         />
       </span>

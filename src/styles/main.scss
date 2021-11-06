@@ -53,34 +53,39 @@ body {
             }
         }
 
-        .tab {
-            width: 250px;
-            height: 42px;
-            margin: 20px 26px;
-            padding: 10px;
-            gap: 1em;
-            display: flex;
+        .tabs {
+            margin-top: 20px;
 
-            .side-bar-icon {
-                font-size: 1.5rem;
-                transform: translateY(-0.125rem);
-                line-height: 1;
-                vertical-align: middle;
-                display: inline-block;
-            }
+            .tab {
+                width: 250px;
+                height: 38px;
+                margin: 0px 26px;
+                padding: 10px;
+                gap: 1em;
+                display: flex;
 
-            .side-bar-arrow {
-                vertical-align: middle;
-            }
+                .side-bar-icon {
+                    margin-top: 1.5px;
+                    font-size: 1.5rem;
+                    transform: translateY(-0.125rem);
+                    line-height: 1;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
 
-            .side-bar-text {
-                min-width: 150px;
-                vertical-align: middle;
-                display: inline-block;
-            }
+                .side-bar-arrow {
+                    vertical-align: middle;
+                }
 
-            span {
-                vertical-align: middle;
+                .side-bar-text {
+                    min-width: 150px;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+
+                span {
+                    vertical-align: middle;
+                }
             }
         }
     }
@@ -111,9 +116,17 @@ body {
 }
 
 .integrations {
+    h3 {
+        margin-bottom: 30px;
+    }
+
     .active-integrations,
     .disabled-integrations {
         display: flex;
+    }
+
+    .active-integrations {
+        margin-bottom: 50px;
     }
 
     .integration {
