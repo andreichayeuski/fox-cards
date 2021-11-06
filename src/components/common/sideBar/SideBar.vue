@@ -7,6 +7,7 @@
     <div class="tabs">
       <Tab v-for="(label, index) in labels" :key="index" :item="label" />
     </div>
+    <div class="tabs-splitter"></div>
   </div>
 </template>
 

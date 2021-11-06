@@ -30,7 +30,7 @@ body {
         left: 0;
         top: 0;
         bottom: 0;
-        max-width: 300px;
+        max-width: 302px;
         color: $primary;
 
         .logo {
@@ -87,6 +87,18 @@ body {
                     vertical-align: middle;
                 }
             }
+        }
+
+        .tabs-splitter {
+            width: 250px;
+            height: 0px;
+            opacity: 0.5;
+
+            border-top: 1px solid #f7f9fc;
+            margin: 20px 26px;
+            flex: none;
+            order: 8;
+            flex-grow: 0;
         }
     }
 
@@ -174,7 +186,6 @@ body {
         .integration-logo {
             float: right;
             margin-top: 30px;
-            margin-right: 8px;
 
             &.disabled {
                 opacity: 0.5;
@@ -185,8 +196,8 @@ body {
         .integration-splitter {
             width: 424px;
             height: 0px;
-            border: 0.5px solid #c9d1e1;
-            margin: 20px 5.5px;
+            border-top: 1px solid #c9d1e1;
+            margin: 20px 4.5px;
         }
 
         .integration-settings {
