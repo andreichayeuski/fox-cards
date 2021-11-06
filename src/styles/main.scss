@@ -58,7 +58,7 @@ body {
 
             .tab {
                 width: 250px;
-                height: 38px;
+                height: 40.75px;
                 margin: 0px 26px;
                 padding: 10px;
                 gap: 1em;
@@ -91,10 +91,11 @@ body {
     }
 
     .page {
-        margin-left: 5%;
+        margin-left: 46px;
 
         header {
             margin-top: 40px;
+            margin-bottom: 30px;
             top: 0;
             display: block;
             width: 100%;
@@ -106,10 +107,14 @@ body {
                 font-size: 38px;
                 line-height: 52px;
             }
+
+            .page-description {
+                color: $description;
+            }
         }
 
         .page-content {
-            margin-top: 40px;
+            margin-top: 30px;
             width: 100%;
         }
     }
@@ -118,6 +123,10 @@ body {
 .integrations {
     h3 {
         margin-bottom: 30px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 38px;
     }
 
     .active-integrations,
@@ -176,7 +185,7 @@ body {
         .integration-splitter {
             width: 424px;
             height: 0px;
-            border: 1px solid #c9d1e1;
+            border: 0.5px solid #c9d1e1;
             margin: 20px 5.5px;
         }
 
