@@ -8,11 +8,24 @@
       <Tab v-for="(label, index) in labels" :key="index" :item="label" />
     </div>
     <div class="tabs-splitter"></div>
+    <div class="tabs-back tab">
+      <Icons
+        class="side-bar-icon"
+        width="27"
+        height="24"
+        viewBox="0 0 16 21"
+        icon-name="back-default"
+        :color="secondaryText"
+      />
+      <span>Вернуться к выбору карт</span>
+    </div>
   </div>
 </template>
 
 <script>
 import Tab from "./Tab.vue";
+import Icons from "@/utils/components/icons/Icons.vue";
+import exportedVars from '@/styles/vueVariables.scss' 
 
 import sideBarLabels from "@/utils/constants/sideBarLabels";
 
@@ -25,9 +38,10 @@ export default {
     return {
       labels: sideBarLabels,
       isOpened: true,
+      secondaryText: exportedVars.secondaryText
     };
   },
-  components: { Tab },
+  components: { Tab, Icons },
 };
 </script>
 

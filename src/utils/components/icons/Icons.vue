@@ -1,5 +1,5 @@
 <template>
-  <base-svg icon-name="iconName"><Component :is="iconName" /></base-svg>
+  <base-svg icon-name="iconName"><Component :is="iconName" :color="color"/></base-svg>
 </template>
 
 <script>
@@ -153,7 +153,7 @@ export default {
     WorkSpaceDefault,
     WorkSpaceUsed
   },
-  props: ["iconName"], // Menu title from the parent
+  props: ["iconName", "color"],
   data() {
     return {
       isOpen: false, // Variable if the menu is open or closed
