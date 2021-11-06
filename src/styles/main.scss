@@ -13,6 +13,13 @@ body {
     /* identical to box height */
 }
 
+.poster-logo {
+    width: 85px;
+    height: 23px;
+
+    background: url(../assets/poster-logo.png);
+}
+
 .main {
     display: flex;
 
@@ -122,6 +129,10 @@ body {
         box-shadow: 0px 8px 24px rgba(129, 135, 189, 0.25);
         border-radius: 30px;
 
+        .integration-info {
+            float: left;
+        }
+
         .integration-name {
             font-style: normal;
             font-weight: 600;
@@ -136,6 +147,17 @@ body {
             font-size: 12px;
             line-height: 16px;
             min-height: 32px;
+        }
+
+        .integration-logo {
+            float: right;
+            margin-top: 30px;
+            margin-right: 8px;
+
+            &.disabled {
+                opacity: 0.5;
+                filter: grayscale(100%);
+            }
         }
 
         .integration-splitter {
@@ -160,7 +182,7 @@ body {
             letter-spacing: 0.08em;
             margin-top: 6px;
             margin-left: 27px;
-            float:left;
+            float: left;
 
             color: #8996b7;
         }

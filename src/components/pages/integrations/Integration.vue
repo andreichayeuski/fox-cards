@@ -1,8 +1,13 @@
 <template>
   <div class="integration">
-    <h3 class="integration-name">{{ service.name }}</h3>
-    <div class="integration-description">
-      <span> {{ service.description }} </span>
+    <div>
+      <div class="integration-info">
+        <h3 class="integration-name">{{ service.name }}</h3>
+        <div class="integration-description">
+          <span> {{ service.description }} </span>
+        </div>
+      </div>
+      <div :class="integrationLogoCss" />
     </div>
     <div class="integration-splitter"></div>
     <div>
@@ -25,5 +30,10 @@ export default {
   props: {
     service: { type: Object, required: true },
   },
+  computed: {
+    integrationLogoCss: function () {
+      return "poster-logo integration-logo" + (this.service.enabled ? "" : " disabled");
+    }
+  }
 };
 </script>
