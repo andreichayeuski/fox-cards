@@ -3,9 +3,9 @@
     <div class="tab" ref="menu" @click="openClose">
       <span class="side-bar-icon">
         <Icons
-          width="27"
-          height="24"
-          viewBox="0 0 16 21"
+          width="23"
+          height="20"
+          viewBox="0 0 16 20"
           :icon-name="item.icon"
         />
       </span>

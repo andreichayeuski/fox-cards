@@ -1,23 +1,29 @@
 <template>
   <div class="side-bar">
-    <div class="logo">
-      <img alt="Vue logo" src="@/assets/logo.png" />
-      <span v-show="isOpened">WalliCards</span>
+    <div class="container">
+      <div class="logo">
+        <img alt="Vue logo" src="@/assets/logo.png" />
+        <span v-show="isOpened">WalliCards</span>
+      </div>
+      <div class="tabs">
+        <Tab v-for="(label, index) in labels" :key="index" :item="label" />
+      </div>
+      <div class="tabs-splitter"></div>
+      <div class="tabs-back tab">
+        <Icons
+          class="side-bar-icon"
+          width="23"
+          height="20"
+          viewBox="0 0 16 20"
+          icon-name="back-default"
+          :color="secondaryText"
+        />
+        <span>Вернуться к выбору карт</span>
+      </div>
     </div>
-    <div class="tabs">
-      <Tab v-for="(label, index) in labels" :key="index" :item="label" />
-    </div>
-    <div class="tabs-splitter"></div>
-    <div class="tabs-back tab">
-      <Icons
-        class="side-bar-icon"
-        width="27"
-        height="24"
-        viewBox="0 0 16 21"
-        icon-name="back-default"
-        :color="secondaryText"
-      />
-      <span>Вернуться к выбору карт</span>
+    <div class="side-bar-minimize">
+      <Arrows class="side-bar-arrow" arrow-name="arrow-left-light" />
+      <span>Свернуть</span>
     </div>
   </div>
 </template>
@@ -25,12 +31,14 @@
 <script>
 import Tab from "./Tab.vue";
 import Icons from "@/utils/components/icons/Icons.vue";
-import exportedVars from '@/styles/vueVariables.scss' 
+import Arrows from "@/utils/components/arrows/Arrows.vue";
+import exportedVars from "@/styles/vueVariables.scss";
 
 import sideBarLabels from "@/utils/constants/sideBarLabels";
 
 export default {
-  name: "HelloWorld",
+  name: "SideBar",
+  components: { Tab, Icons, Arrows },
   props: {
     msg: String,
   },
@@ -38,10 +46,9 @@ export default {
     return {
       labels: sideBarLabels,
       isOpened: true,
-      secondaryText: exportedVars.secondaryText
+      secondaryText: exportedVars.primaryOpacity,
     };
   },
-  components: { Tab, Icons },
 };
 </script>
 

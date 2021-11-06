@@ -10,7 +10,16 @@ body {
     font-weight: 200;
     font-size: 16px;
     line-height: 22px;
+    height: 100%;
     /* identical to box height */
+}
+
+#app {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
 }
 
 .poster-logo {
@@ -22,6 +31,7 @@ body {
 
 .main {
     display: flex;
+    height: 100%;
 
     .side-bar {
         background-color: $secondary;
@@ -32,6 +42,8 @@ body {
         bottom: 0;
         max-width: 302px;
         color: $primary;
+        display:flex;
+        flex-direction: column;
 
         .logo {
             display: flex;
@@ -58,18 +70,19 @@ body {
 
             .tab {
                 width: 250px;
-                margin: 12.5px 26px;
+                margin: 18.9px 26px;
                 padding: 10px;
                 gap: 1em;
                 display: flex;
+                justify-content: left;
+                align-items: center;
+
+                &:last-child {
+                    margin-top: 10px;
+                }
 
                 .side-bar-icon {
-                    margin-top: 1.5px;
-                    font-size: 1.5rem;
-                    transform: translateY(-0.125rem);
-                    line-height: 1;
-                    vertical-align: middle;
-                    display: inline-block;
+                    line-height: 1px;
                 }
 
                 .side-bar-arrow {
@@ -94,23 +107,38 @@ body {
             opacity: 0.5;
 
             border-top: 1px solid #f7f9fc;
-            margin: 20px 26px;
+            margin: 18px 26px;
             flex: none;
             order: 8;
             flex-grow: 0;
         }
 
         .tabs-back {
-            fill: $secondary-text;
             width: 250px;
             margin: 0px 26px;
             padding: 10px;
             gap: 1em;
             display: flex;
+            justify-content: left;
+            align-items: center;
 
             span {
-                color: $secondary-text;
+                color: $primary-opacity;
             }
+        }
+
+        .side-bar-minimize {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 90px;
+            width: 250px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin: 27px 26px;
+            gap: 0.42rem;
+            justify-content: center;
+            bottom: 0;
+            margin-top: auto;
         }
     }
 
