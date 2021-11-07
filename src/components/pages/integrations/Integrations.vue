@@ -32,36 +32,15 @@ export default {
   },
   data() {
     return {
-      integrations: [
-        {
-          name: "Poster",
-          description: "Интеграция с сервисом POSTER",
-          enabled: true,
-        },
-        {
-          name: "Poster",
-          description: "Интеграция с сервисом POSTER",
-          enabled: true,
-        },
-        {
-          name: "Poster",
-          description: "Интеграция с сервисом POSTER",
-          enabled: true,
-        },
-        {
-          name: "Poster",
-          description: "Интеграция с сервисом POSTER",
-          enabled: false,
-        },
-      ],
+      some: false,
     };
   },
   computed: {
     activeIntegrations: function () {
-      return this.integrations.filter((x) => x.enabled);
+      return this.$store.state.integrations.filter((x) => x.enabled);
     },
     disabledIntegrations: function () {
-      return this.integrations.filter((x) => !x.enabled);
+      return this.$store.state.integrations.filter((x) => !x.enabled);
     },
     activeCount: function () {
       return this.activeIntegrations.length;

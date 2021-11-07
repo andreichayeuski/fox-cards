@@ -1,5 +1,5 @@
 <template>
-  <Integration v-for="(service, index) in servicesList" :key="index" :service="service" />
+  <Integration v-for="service in servicesList" :key="service.id" :service="service" />
 </template>
 
 <script>

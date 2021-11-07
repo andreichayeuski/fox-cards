@@ -42,8 +42,8 @@ export default {
     },
   },
   methods: {
-    serviceToggle: function (toggle) {
-      this.serviceEnabled = toggle;
+    serviceToggle: function () {
+      this.$store.commit('changeEnable', this.service.id);
     },
   },
   mounted: function () {
