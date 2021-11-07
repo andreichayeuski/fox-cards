@@ -7,7 +7,7 @@
           <span> {{ service.description }} </span>
         </div>
       </div>
-      <div :class="integrationLogoCss" />
+      <div :class="integrationLogoCss"></div>
     </div>
     <div class="integration-splitter"></div>
     <div>
@@ -36,14 +36,15 @@ export default {
   computed: {
     integrationLogoCss: function () {
       return (
-        "poster-logo integration-logo" +
+        "integration-logo " +
+        this.service.image +
         (this.service.enabled ? "" : " disabled")
       );
     },
   },
   methods: {
     serviceToggle: function () {
-      this.$store.commit('changeEnable', this.service.id);
+      this.$store.commit("changeEnable", this.service.id);
     },
   },
   mounted: function () {

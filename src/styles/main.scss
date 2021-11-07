@@ -22,13 +22,6 @@ body {
     height: 100%;
 }
 
-.poster-logo {
-    width: 85px;
-    height: 23px;
-
-    background: url(../assets/poster-logo.png);
-}
-
 .main {
     display: flex;
     min-height: 100%;
@@ -275,8 +268,10 @@ body {
         }
 
         .integration-logo {
+            background-size: 50px;
+            height: 60px;
+            width: 60px;
             float: right;
-            margin-top: 30px;
 
             &.disabled {
                 opacity: 0.5;
@@ -315,4 +310,20 @@ body {
             float: right;
         }
     }
+}
+
+.apple {
+    background: url(~@/assets/images/apple.png) no-repeat;
+}
+.amazon {
+    background: url(~@/assets/images/amazon.png) no-repeat;
+}
+.microsoft {
+    background: url(~@/assets/images/microsoft.png) no-repeat;
+}
+.vmware {
+    background: url(~@/assets/images/vmware.png) no-repeat;
+}
+.google {
+    background: url(~@/assets/images/google.png) no-repeat;
 }
