@@ -32,17 +32,37 @@ export default {
   },
   data() {
     return {
-      activeIntegrations: [
-        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: true },
-        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: true },
-        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: true },
-      ],
-      disabledIntegrations: [
-        { name: "Poster", description: "Интеграция с сервисом POSTER", enabled: false },
+      integrations: [
+        {
+          name: "Poster",
+          description: "Интеграция с сервисом POSTER",
+          enabled: true,
+        },
+        {
+          name: "Poster",
+          description: "Интеграция с сервисом POSTER",
+          enabled: true,
+        },
+        {
+          name: "Poster",
+          description: "Интеграция с сервисом POSTER",
+          enabled: true,
+        },
+        {
+          name: "Poster",
+          description: "Интеграция с сервисом POSTER",
+          enabled: false,
+        },
       ],
     };
   },
   computed: {
+    activeIntegrations: function () {
+      return this.integrations.filter((x) => x.enabled);
+    },
+    disabledIntegrations: function () {
+      return this.integrations.filter((x) => !x.enabled);
+    },
     activeCount: function () {
       return this.activeIntegrations.length;
     },
