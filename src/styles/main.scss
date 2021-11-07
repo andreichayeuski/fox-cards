@@ -151,7 +151,7 @@ body {
         }
 
         .tabs-back {
-            width: 250px;
+            width: 225px;
             margin: 0px 26px;
             padding: 10px;
             gap: 1em;
@@ -161,6 +161,16 @@ body {
 
             span {
                 color: $primary-opacity;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 90px;
+
+                span {
+                    color: $primary;
+                }
             }
         }
 
@@ -176,6 +186,10 @@ body {
             justify-content: center;
             bottom: 0;
             margin-top: auto;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 

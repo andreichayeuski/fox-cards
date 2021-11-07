@@ -9,14 +9,18 @@
         <Tab v-for="(label, index) in labels" :key="index" :item="label" />
       </div>
       <div class="tabs-splitter"></div>
-      <div class="tabs-back tab">
+      <div
+        class="tabs-back tab"
+        @mouseover="mouseover"
+        @mouseleave="mouseleave"
+      >
         <Icons
           class="side-bar-icon"
           width="23"
           height="20"
           viewBox="0 0 16 20"
           icon-name="back-default"
-          :color="secondaryText"
+          :color="backColor"
         />
         <span>Вернуться к выбору карт</span>
       </div>
@@ -46,26 +50,16 @@ export default {
     return {
       labels: sideBarLabels,
       isOpened: true,
-      secondaryText: exportedVars.primaryOpacity,
+      backColor: exportedVars.primaryOpacity,
     };
+  },
+  methods: {
+    mouseover: function () {
+      this.backColor = exportedVars.primary;
+    },
+    mouseleave: function () {
+      this.backColor = exportedVars.primaryOpacity;
+    },
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
