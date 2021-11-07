@@ -13,27 +13,41 @@
     <div>
       <h5 class="integration-settings">Настройка</h5>
       <div class="integration-toggle">
-        <ToggleOff v-show="!service.enabled" />
-        <ToggleOn v-show="service.enabled" />
+        <Toggle :isEnabled="serviceEnabled" @toggle="serviceToggle" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ToggleOn from "@/utils/components/toggles/vue/ToggleOn.vue";
-import ToggleOff from "@/utils/components/toggles/vue/ToggleOff.vue";
+import Toggle from "@/utils/components/Toggle.vue";
 
 export default {
   name: "Integration",
-  components: { ToggleOn, ToggleOff },
+  components: { Toggle },
   props: {
     service: { type: Object, required: true },
   },
+  data() {
+    return {
+      serviceEnabled: false,
+    };
+  },
   computed: {
     integrationLogoCss: function () {
-      return "poster-logo integration-logo" + (this.service.enabled ? "" : " disabled");
-    }
-  }
+      return (
+        "poster-logo integration-logo" +
+        (this.service.enabled ? "" : " disabled")
+      );
+    },
+  },
+  methods: {
+    serviceToggle: function (toggle) {
+      this.serviceEnabled = toggle;
+    },
+  },
+  mounted: function () {
+    this.serviceEnabled = this.service.enabled;
+  },
 };
 </script>
