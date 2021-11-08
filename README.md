@@ -1,4 +1,4 @@
-# wally-cards
+# fox-cards
 
 ## Project setup
 ```

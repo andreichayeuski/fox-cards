@@ -3,7 +3,7 @@
     <div class="container">
       <div class="logo">
         <img alt="Vue logo" src="@/assets/logo.png" />
-        <span v-show="isOpened">WalliCards</span>
+        <span v-show="isOpened">Fox Cards</span>
       </div>
       <div class="tabs">
         <Tab v-for="(label, index) in labels" :key="index" :item="label" />
