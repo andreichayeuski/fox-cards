@@ -2,7 +2,7 @@
   <div class="switch-button-control">
     <div
       class="switch-button"
-      :class="{ enabled: isEnabled }"
+      :class="{ enabled: enabled }"
       @click="toggle"
       :style="{ '--color': color }"
     >
@@ -24,10 +24,22 @@ export default {
       default: "#0080F6",
     },
   },
+  data() {
+    return {
+      enabled: false,
+    };
+  },
   methods: {
     toggle: function () {
-      this.$emit("toggle", !this.isEnabled);
+      this.enabled = !this.enabled;
+      var toggle = this;
+      setTimeout(function () {
+        toggle.$emit("toggle", !this.isEnabled);
+      }, 1000);
     },
+  },
+  mounted: function () {
+    this.enabled = this.isEnabled;
   },
 };
 </script>
@@ -66,7 +78,7 @@ export default {
     cursor: pointer;
 
     .button {
-      height: $button-side-length;
+      height: calc($button-side-length - 0.5px);
       width: $button-side-length;
       transform: translateX(1px) translateY(1px);
 

@@ -13,7 +13,7 @@
     <div>
       <h5 class="integration-settings">Настройка</h5>
       <div class="integration-toggle">
-        <Toggle :isEnabled="serviceEnabled" @toggle="serviceToggle" />
+        <Toggle :isEnabled="service.enabled" @toggle="serviceToggle" />
       </div>
     </div>
   </div>
@@ -28,11 +28,6 @@ export default {
   props: {
     service: { type: Object, required: true },
   },
-  data() {
-    return {
-      serviceEnabled: false,
-    };
-  },
   computed: {
     integrationLogoCss: function () {
       return (
@@ -46,9 +41,6 @@ export default {
     serviceToggle: function () {
       this.$store.commit("changeEnable", this.service.id);
     },
-  },
-  mounted: function () {
-    this.serviceEnabled = this.service.enabled;
-  },
+  }
 };
 </script>
