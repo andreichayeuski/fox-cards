@@ -48,7 +48,6 @@ const store = createStore({
     mutations: {
         changeEnable(state, index) {
             var indexOfService = state.integrations.findIndex(x => x.id === index);
-            console.log(indexOfService);
             state.integrations[indexOfService].enabled = !state.integrations[indexOfService].enabled;
         }
     }
