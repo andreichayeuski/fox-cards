@@ -19,20 +19,33 @@
         @mouseover="mouseover"
         @mouseleave="mouseleave"
       >
-        <Icons
-          class="side-bar-icon"
-          width="23"
-          height="20"
-          viewBox="0 0 16 20"
-          icon-name="back-default"
-          :color="backColor"
-        />
-        <span v-show="isExpanded">Вернуться к выбору карт</span>
+        <span class="side-bar-icon">
+          <Icons
+            width="22"
+            height="20"
+            viewBox="0 0 20 20"
+            icon-name="back-default"
+            :color="backColor"
+          />
+        </span>
+        <span class="tabs-back-text" v-show="isExpanded"
+          >Вернуться к выбору карт</span
+        >
       </div>
     </div>
-    <div class="side-bar-minimize" @click="toggleExpand">
-      <Arrows class="side-bar-arrow" :arrow-name="arrowMinimizeName" />
-      <span v-show="isExpanded">Свернуть</span>
+    <div @click="toggleExpand">
+      <div class="side-bar-minimize">
+        <span>
+          <Arrows
+            width="22"
+            height="20"
+            viewBox="0 0 20 20"
+            class="side-bar-arrow"
+            :arrow-name="arrowMinimizeName"
+          />
+        </span>
+        <span class="side-bar-minimize-text" v-show="isExpanded">Свернуть</span>
+      </div>
     </div>
   </div>
 </template>

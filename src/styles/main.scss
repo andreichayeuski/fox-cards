@@ -85,15 +85,14 @@ body {
 
                 .side-bar-icon {
                     align-content: center;
-                }
 
-                .side-bar-icon svg {
-                    vertical-align: middle;
+                    svg {
+                        vertical-align: middle;
+                    }
                 }
 
                 .side-bar-arrow {
                     align-content: center;
-                    display: block;
 
                     svg {
                         vertical-align: middle;
@@ -153,15 +152,26 @@ body {
 
         .tabs-back {
             width: auto;
-            margin: 0px 26px;
+            margin: 0px 23.5px 0px 33.5px;
             padding: 10px;
             gap: 1em;
             display: flex;
             justify-content: left;
             align-items: center;
+            text-overflow: unset;
+
+            svg {
+                vertical-align: middle;
+            }
 
             span {
                 color: $primary-opacity;
+            }
+
+            .tabs-back-text {
+                min-width: 183px;
+                vertical-align: middle;
+                display: inline-block;
             }
 
             &:hover {
@@ -182,11 +192,20 @@ body {
             height: 40px;
             display: flex;
             align-items: center;
-            margin: 27px 26px;
-            gap: 0.42rem;
+
+            margin: 27px 33px;
             justify-content: center;
             bottom: 0;
             margin-top: auto;
+
+            svg {
+                vertical-align: middle;
+            }
+
+            .side-bar-minimize-text {
+                vertical-align: middle;
+                display: inline-block;
+            }
 
             &:hover {
                 cursor: pointer;
@@ -194,11 +213,22 @@ body {
         }
     }
 
-    .side-bar-mini .tabs .tab {
+    .side-bar-mini .tabs .tab,
+    .side-bar-mini .tabs-back.tab,
+    .side-bar-mini .side-bar-minimize {
         max-width: 100px;
         gap: unset;
         justify-content: center;
         margin: 18.9px 33px;
+    }
+
+    .side-bar-mini .tabs-back.tab {
+        margin-bottom: 0px;
+    }
+
+    .side-bar-mini .side-bar-minimize {
+        margin-top: auto;
+        margin-bottom: 27px;
     }
 
     .page {
