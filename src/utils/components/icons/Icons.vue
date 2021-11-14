@@ -1,5 +1,7 @@
 <template>
-  <base-svg icon-name="iconName"><Component :is="iconName" :color="color"/></base-svg>
+  <BaseSvg>
+    <Component :is="iconName" :color="color"/>
+  </BaseSvg>
 </template>
 
 <script>
@@ -151,7 +153,7 @@ export default {
     VisibleDefault,
     VisibleUsed,
     WorkSpaceDefault,
-    WorkSpaceUsed
+    WorkSpaceUsed,
   },
   props: ["iconName", "color"],
   data() {

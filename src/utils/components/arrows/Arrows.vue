@@ -1,5 +1,7 @@
 <template>
-  <base-svg icon-name="iconName"><Component :is="arrowName" /></base-svg>
+  <BaseSvg>
+    <Component :is="arrowName" />
+  </BaseSvg>
 </template>
 
 <script>
@@ -29,20 +31,6 @@ export default {
     ArrowUpDark,
     ArrowUpLight,
   },
-  props: ["arrowName"], // Menu title from the parent
-  data() {
-    return {
-      isOpen: false, // Variable if the menu is open or closed
-    };
-  },
-  methods: {
-    openClose() {
-      // Toggle between open or closed ( true || false )
-      this.isOpen = !this.isOpen;
-    },
-    getIconCssClass(icon) {
-      return "side-bar-icon " + icon + "-icon";
-    },
-  },
+  props: ["arrowName"]
 };
 </script>

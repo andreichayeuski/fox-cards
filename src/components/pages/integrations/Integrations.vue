@@ -3,19 +3,17 @@
     <Header title="Интеграции" description="Активные и неактивные интеграции" />
     <div class="page-content integrations">
       <h3>Активные интеграции ({{ activeCount }})</h3>
-      <div class="active-integrations">
-        <IntegrationsBlock
-          v-show="activeCount > 0"
-          :servicesList="activeIntegrations"
-        />
-      </div>
+      <IntegrationsBlock
+        v-show="activeCount > 0"
+        :servicesList="activeIntegrations"
+        class="active-integrations"
+      />
       <h3>Неактивные интеграции ({{ disabledCount }})</h3>
-      <div class="disabled-integrations">
-        <IntegrationsBlock
-          v-show="disabledCount > 0"
-          :servicesList="disabledIntegrations"
-        />
-      </div>
+      <IntegrationsBlock
+        v-show="disabledCount > 0"
+        :servicesList="disabledIntegrations"
+        class="disabled-integrations"
+      />
     </div>
   </div>
 </template>
