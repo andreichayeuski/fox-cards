@@ -11,6 +11,7 @@
           :key="index"
           :item="label"
           :isExpanded="isExpanded"
+          :isSelected="isSelected(index)"
         />
       </div>
       <div class="tabs-splitter"></div>
@@ -63,6 +64,10 @@ export default {
   components: { Tab, Icons, Arrows },
   props: {
     msg: String,
+    selectedTab: {
+      type: String,
+      default: "Интеграции",
+    },
   },
   data() {
     return {
@@ -77,7 +82,7 @@ export default {
     },
     arrowMinimizeName: function () {
       return this.isExpanded ? "arrow-left-light" : "arrow-right-light";
-    },
+    }
   },
   methods: {
     mouseover: function () {
@@ -88,6 +93,9 @@ export default {
     },
     toggleExpand: function () {
       this.isExpanded = !this.isExpanded;
+    },
+    isSelected: function (index) {
+      return this.labels[index].label.toLowerCase() === this.selectedTab.toLowerCase();
     },
   },
 };
