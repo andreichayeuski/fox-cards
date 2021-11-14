@@ -63,15 +63,17 @@ export default {
   },
   methods: {
     openClose() {
-      // Toggle between open or closed ( true || false )
-      this.isOpen = !this.isOpen;
-    },
-    mouseover() {
       if (!this.isSelected) {
         this.itemIcon = this.itemIcon.toLowerCase().replace("default", "used");
       }
       this.isHovered = true;
-      this.isOpen = true;
+      this.isOpen = !this.isOpen;
+    },
+    mouseover() {
+      this.isHovered = true;
+      if (!this.isSelected) {
+        this.itemIcon = this.itemIcon.toLowerCase().replace("default", "used");
+      }
     },
     mouseleave() {
       if (!this.isSelected) {
