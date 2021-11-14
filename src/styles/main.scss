@@ -69,8 +69,8 @@ body {
 
             .tab {
                 cursor: pointer;
-                width: 225px;
-                margin: 18.9px 26px;
+                width: auto;
+                margin: 18.9px 33.5px;
                 margin-bottom: 0px;
                 padding: 10px;
                 gap: 1em;
@@ -84,15 +84,24 @@ body {
                 }
 
                 .side-bar-icon {
-                    line-height: 1px;
+                    align-content: center;
                 }
 
-                .side-bar-arrow {
+                .side-bar-icon svg {
                     vertical-align: middle;
                 }
 
+                .side-bar-arrow {
+                    align-content: center;
+                    display: block;
+
+                    svg {
+                        vertical-align: middle;
+                    }
+                }
+
                 .side-bar-text {
-                    min-width: 150px;
+                    min-width: 145px;
                     vertical-align: middle;
                     display: inline-block;
                 }
@@ -108,12 +117,11 @@ body {
                 margin: 10px 46px;
                 margin-top: 0;
                 cursor: pointer;
-                width: 205px;
                 align-items: center;
                 border-radius: 0px 0px 10px 10px;
 
                 .tab-option {
-                    padding: 5px 21px;
+                    padding: 5px 10px;
 
                     &:last-child {
                         padding-bottom: 10px;
@@ -132,7 +140,7 @@ body {
         }
 
         .tabs-splitter {
-            width: 250px;
+            width: auto;
             height: 0px;
             opacity: 0.5;
 
@@ -144,7 +152,7 @@ body {
         }
 
         .tabs-back {
-            width: 225px;
+            width: auto;
             margin: 0px 26px;
             padding: 10px;
             gap: 1em;
@@ -170,7 +178,7 @@ body {
         .side-bar-minimize {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 90px;
-            width: 250px;
+            width: auto;
             height: 40px;
             display: flex;
             align-items: center;
@@ -184,6 +192,13 @@ body {
                 cursor: pointer;
             }
         }
+    }
+
+    .side-bar-mini .tabs .tab {
+        max-width: 100px;
+        gap: unset;
+        justify-content: center;
+        margin: 18.9px 33px;
     }
 
     .page {

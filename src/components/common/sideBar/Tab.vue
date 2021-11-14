@@ -3,20 +3,21 @@
     <div :class="tabClass" ref="menu" @click="openClose">
       <span class="side-bar-icon">
         <Icons
-          width="23"
-          height="20"
-          viewBox="0 0 16 20"
+          width="22"
+          height="22"
+          viewBox="0 0 20 20"
           :icon-name="itemIcon"
         />
       </span>
-      <span class="side-bar-text"> {{ item.label }} </span>
-      <Arrows
-        class="side-bar-arrow"
-        :arrow-name="arrowName"
-        v-show="item.children.length > 0"
-      />
+      <span class="side-bar-text" v-show="isExpanded"> {{ item.label }} </span>
+      <span class="side-bar-arrow">
+        <Arrows
+          :arrow-name="arrowName"
+          v-show="isExpanded && item.children.length > 0"
+        />
+      </span>
     </div>
-    <div class="tab-options" v-show="isOpen">
+    <div class="tab-options" v-show="isExpanded && isOpen">
       <li
         class="tab-option"
         v-for="(label, index) in item.children"
@@ -37,10 +38,10 @@ export default {
     Icons,
     Arrows,
   },
-  props: ["item"], // Menu title from the parent
+  props: ["item", "isExpanded"],
   data() {
     return {
-      isOpen: false, // Variable if the menu is open or closed,
+      isOpen: false,
       isHovered: false,
       itemIcon: "",
     };

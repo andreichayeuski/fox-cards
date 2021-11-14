@@ -1,12 +1,17 @@
 <template>
-  <div class="side-bar">
+  <div :class="sideBarClass">
     <div class="container">
       <div class="logo">
         <img alt="Vue logo" src="@/assets/logo.png" />
-        <span v-show="isOpened">Fox Cards</span>
+        <span v-show="isExpanded">Fox Cards</span>
       </div>
       <div class="tabs">
-        <Tab v-for="(label, index) in labels" :key="index" :item="label" />
+        <Tab
+          v-for="(label, index) in labels"
+          :key="index"
+          :item="label"
+          :isExpanded="isExpanded"
+        />
       </div>
       <div class="tabs-splitter"></div>
       <div
@@ -22,12 +27,12 @@
           icon-name="back-default"
           :color="backColor"
         />
-        <span>Вернуться к выбору карт</span>
+        <span v-show="isExpanded">Вернуться к выбору карт</span>
       </div>
     </div>
-    <div class="side-bar-minimize">
-      <Arrows class="side-bar-arrow" arrow-name="arrow-left-light" />
-      <span>Свернуть</span>
+    <div class="side-bar-minimize" @click="toggleExpand">
+      <Arrows class="side-bar-arrow" :arrow-name="arrowMinimizeName" />
+      <span v-show="isExpanded">Свернуть</span>
     </div>
   </div>
 </template>
@@ -49,9 +54,17 @@ export default {
   data() {
     return {
       labels: sideBarLabels,
-      isOpened: true,
+      isExpanded: true,
       backColor: exportedVars.primaryOpacity,
     };
+  },
+  computed: {
+    sideBarClass: function () {
+      return (!this.isExpanded ? "side-bar-mini " : "") + "side-bar";
+    },
+    arrowMinimizeName: function () {
+      return this.isExpanded ? "arrow-left-light" : "arrow-right-light";
+    },
   },
   methods: {
     mouseover: function () {
@@ -59,6 +72,9 @@ export default {
     },
     mouseleave: function () {
       this.backColor = exportedVars.primaryOpacity;
+    },
+    toggleExpand: function () {
+      this.isExpanded = !this.isExpanded;
     },
   },
 };
