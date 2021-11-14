@@ -112,9 +112,7 @@ body {
             }
 
             .tab-options {
-                background-color: $primary;
-                color: $secondary;
-                margin: 10px 46px;
+                margin: 10px 55px;
                 margin-top: 0;
                 cursor: pointer;
                 align-items: center;
@@ -122,12 +120,14 @@ body {
 
                 .tab-option {
                     padding: 5px 10px;
+                    list-style: none;
 
                     &:last-child {
                         padding-bottom: 10px;
                     }
 
                     &::marker {
+                        display: none;
                         margin-right: 0;
                     }
 
