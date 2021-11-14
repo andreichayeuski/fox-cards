@@ -79,11 +79,8 @@ body {
                 align-items: center;
                 border-radius: 90px;
 
-                &:last-child {
-                    margin-top: 10px;
-                }
-
                 .side-bar-icon {
+                    width: 23px;
                     align-content: center;
 
                     svg {
@@ -166,6 +163,7 @@ body {
 
             span {
                 color: $primary-opacity;
+                width: 23px;
             }
 
             .tabs-back-text {
@@ -193,7 +191,7 @@ body {
             display: flex;
             align-items: center;
 
-            margin: 27px 33px;
+            margin: 27px 33.5px;
             justify-content: center;
             bottom: 0;
             margin-top: auto;
@@ -219,10 +217,15 @@ body {
         max-width: 100px;
         gap: unset;
         justify-content: center;
-        margin: 18.9px 33px;
+        margin: 18.9px 33.5px;
     }
 
     .side-bar-mini .tabs-back.tab {
+        margin-bottom: 0px;
+        margin-top: auto;
+    }
+
+    .side-bar-mini .tabs div:last-child .tab {
         margin-bottom: 0px;
     }
 
