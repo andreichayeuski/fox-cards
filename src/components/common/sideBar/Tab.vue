@@ -10,11 +10,11 @@
         />
       </span>
       <span class="side-bar-text" v-show="isExpanded"> {{ item.label }} </span>
-      <span class="icons-span side-bar-arrow">
-        <Arrows
-          :arrow-name="arrowName"
-          v-show="isExpanded && item.children.length > 0"
-        />
+      <span
+        class="icons-span side-bar-arrow"
+        v-show="isExpanded && item.children.length > 0"
+      >
+        <Arrows :arrow-name="arrowName" />
       </span>
     </div>
     <div class="tab-options" v-show="isExpanded && isOpen">
