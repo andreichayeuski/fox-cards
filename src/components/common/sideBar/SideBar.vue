@@ -19,7 +19,7 @@
         @mouseover="mouseover"
         @mouseleave="mouseleave"
       >
-        <span class="side-bar-icon">
+        <span class="icons-span side-bar-icon">
           <Icons
             width="22"
             height="20"
@@ -35,7 +35,7 @@
     </div>
     <div @click="toggleExpand">
       <div class="side-bar-minimize">
-        <span>
+        <span class="icons-span">
           <Arrows
             width="22"
             height="20"

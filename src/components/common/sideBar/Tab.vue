@@ -1,7 +1,7 @@
 <template>
   <div @mouseover="mouseover" @mouseleave="mouseleave">
     <div :class="tabClass" ref="menu" @click="openClose">
-      <span class="side-bar-icon">
+      <span class="icons-span side-bar-icon">
         <Icons
           width="22"
           height="22"
@@ -10,7 +10,7 @@
         />
       </span>
       <span class="side-bar-text" v-show="isExpanded"> {{ item.label }} </span>
-      <span class="side-bar-arrow">
+      <span class="icons-span side-bar-arrow">
         <Arrows
           :arrow-name="arrowName"
           v-show="isExpanded && item.children.length > 0"

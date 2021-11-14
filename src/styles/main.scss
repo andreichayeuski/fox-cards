@@ -64,6 +64,10 @@ body {
             color: $secondary;
         }
 
+        .icons-span {
+            width: 23px;
+        }
+
         .tabs {
             margin-top: 20px;
 
@@ -80,7 +84,6 @@ body {
                 border-radius: 90px;
 
                 .side-bar-icon {
-                    width: 23px;
                     align-content: center;
 
                     svg {
@@ -163,7 +166,6 @@ body {
 
             span {
                 color: $primary-opacity;
-                width: 23px;
             }
 
             .tabs-back-text {
